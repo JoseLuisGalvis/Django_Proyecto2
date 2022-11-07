@@ -1,0 +1,40 @@
+{%  extends 'core/base.html'  %}
+{%  block title  %} Acerca De... {%  endblock  %}
+
+{% load static %}
+{% block image-header %}
+{% static 'core/img/about-bg.jpg' %}
+{% endblock %} 
+
+{%  block header  %}
+<h1>Acerca de</h1>
+<span class="subheading">Biografía</span>
+{%  endblock  %}
+
+{% block content %}
+{% load static %}
+<div class="row d-flex">
+    <div class="col-4 offset-md-auto">
+        <img class="img-fluid img-thumbnail img-circle img-perfil " src={% static 'core/img/foto-perfil.png' %}  alt="">
+    </div>
+    <div class="col-6">
+        <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit temporibus distinctio expedita enim, libero pariatur aliquam ullam molestiae debitis eos nobis at ipsa eveniet cum officiis fuga incidunt eius ex?</h4>
+    </div>
+            </div> 
+    <div class="row d-flex pt-5">
+        <div class="col-12">
+            <h2 class="fw-bold">Formación Académica</h2>
+            {% for course in courses %}
+            <h3> {{course.title}}</h3>
+                <p><strong>Título obtenido:</strong> {{course.degree_title}}</p>
+                <p><strong>Descripción:</strong> {{course.description}}</p>
+
+                <hr>
+            {% endfor %}
+       
+        </div>
+    </div>
+{% endblock %}
+
+
+
